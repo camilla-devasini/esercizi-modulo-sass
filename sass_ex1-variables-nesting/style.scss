@@ -1,0 +1,62 @@
+$primary-red: rgb(251, 77, 77);
+$primary-blue: rgb(87, 87, 243);
+$primary-green: rgb(36, 108, 72);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid $primary-red;
+
+    h1 {
+        padding: 30px;
+        color: $primary-green;
+        text-decoration: underline {
+            thickness: 1px ;
+            color: $primary-blue;
+        }
+        text-underline-offset: 10px;
+       
+    }
+
+    .frames-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr;
+        justify-content: center;
+        height: 150px;
+        border: 1px solid $primary-green;
+        border-right: 0px;
+        margin: {
+            left: 20px;
+            right: 20px;
+            bottom: 20px;
+        }
+        
+        .box {
+            width: 100%;
+            height: 100%;
+            border-right: 1px solid $primary-green;
+            display: flex;
+            text-align: center;
+            flex-direction: column;
+            justify-content: center;
+
+            &:nth-of-type(even) {
+                color: $primary-red;
+            }
+
+            &:nth-of-type(odd) {
+                color: $primary-blue;
+            }
+        }
+
+    }
+}
+
+
