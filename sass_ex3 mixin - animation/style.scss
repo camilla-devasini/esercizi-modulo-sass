@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+$red: rgb(219, 20, 60);
+
+@mixin bouncing-effect ($start:0px, $intermediate-distance, $end, $max-distance:-50px, $name) {
+    animation: {
+        name: $name;
+        duration: 1s;
+        iteration-count: infinite;
+        play-state:running;
+        timing-function: linear;
+    }
+    @keyframes #{$name} {
+    0%, 50% {transform: translateY($start);}
+    25% {transform: translateY($max-distance);}
+    75% {transform: translateY($intermediate-distance);}  
+    100% {transform: translateY($end);}  
+    } 
+}
+
+.bounce {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: $red;
+    margin: {
+        top: 100px;
+        left: 100px;
+        }
+    
+    @include bouncing-effect(0px, -25px,-50px, 0px, bounce);
+   
+    
+}
