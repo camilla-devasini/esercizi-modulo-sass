@@ -6,12 +6,12 @@
 
 $red: rgb(219, 20, 60);
 
-@mixin bouncing-effect ($start:0px, $intermediate-distance, $end, $max-distance:-50px, $name) {
+@mixin bouncing-effect ($start:0px, $max-distance:-50px, $intermediate-distance, $end, $name) {
     animation: {
         name: $name;
         duration: 1s;
         iteration-count: infinite;
-        play-state:running;
+        play-state: running;
         timing-function: linear;
     }
     @keyframes #{$name} {
@@ -32,7 +32,7 @@ $red: rgb(219, 20, 60);
         left: 100px;
         }
     
-    @include bouncing-effect(0px, -25px,-50px, 0px, bounce);
+    @include bouncing-effect(0px, -50px, -25px, 0px, bounce);
    
     
 }
