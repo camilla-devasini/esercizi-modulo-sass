@@ -11,7 +11,7 @@
     $value: random(16) - 1;
     @if ($value > 9) {
       $letters: A, B, C, D, E, F;
-      $value: nth( $letters, ($value - 9));
+      $value: nth($letters, ($value - 9));
     }
     $rgb: $rgb + $value;
     $i: $i - 1;

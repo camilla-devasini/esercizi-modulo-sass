@@ -9,40 +9,38 @@
   margin: 30px 10px;
 }
 .col:nth-child(1) {
-  background-color: #1B2881;
+  background-color: #873DA8;
 }
 .col:nth-child(2) {
-  background-color: #C9500A;
+  background-color: #A1E58A;
 }
 .col:nth-child(3) {
-  background-color: #1120AB;
+  background-color: #AE5FCB;
 }
 .col:nth-child(4) {
-  background-color: #E89726;
+  background-color: #3418AE;
 }
 .col:nth-child(5) {
-  background-color: #C730DA;
+  background-color: #A8E2CC;
 }
 .col:nth-child(6) {
-  background-color: #4D7C89;
+  background-color: #737879;
 }
 .col:nth-child(7) {
-  background-color: #673EE1;
+  background-color: #7C6E2E;
 }
 .col:nth-child(8) {
-  background-color: #5AB45D;
+  background-color: #FC66BD;
 }
 .col:nth-child(9) {
-  background-color: #0C1D77;
+  background-color: #E5CC31;
 }
 .col:nth-child(10) {
-  background-color: #C04BB3;
+  background-color: #E1226B;
 }
 .col:nth-child(11) {
-  background-color: #94AAB9;
+  background-color: #CE576F;
 }
 .col:nth-child(12) {
-  background-color: #402484;
-}
-
-/*# sourceMappingURL=style.css.map */
+  background-color: #B0E3DE;
+}/*# sourceMappingURL=style.css.map */
