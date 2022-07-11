@@ -1,0 +1,115 @@
+@use "var";
+@use "func";
+
+@mixin article-box-style ($text-color, $border-color, $px-value) {
+    color: $text-color;
+    border: 1px solid $border-color;
+    font-size: func.px-to-rem($px-value);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 15px 10px; 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+%heading-property {
+    color: var.$primary-green;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid var.$primary-red;
+
+    & h1 {
+        @extend %heading-property;
+        padding: 30px;
+        text-decoration: underline {
+            thickness: 1px ;
+            color: var.$primary-blue;
+        }
+        text-underline-offset: 10px;  
+    }
+
+    & h2 {
+        @extend %heading-property;
+        padding: func.px-to-rem(16px);
+        border: 1px solid var.$primary-red;
+        margin-bottom: 30px;
+    }
+
+    & .frames-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr;
+        justify-content: center;
+        height: 150px;
+        margin: {
+            left: 20px;
+            right: 20px;
+            bottom: 20px;
+        }
+        
+        & .article-box {
+           @include article-box-style(var.$primary-blue, var.$primary-green, 16px);
+           &:nth-of-type(2n) {
+            color: var.$primary-red;
+            }
+        }
+    }
+
+    & .footer-container {
+        display: flex;
+        width: 100%;
+    
+        & .article-footer {
+            @include article-box-style (var.$primary-green, var.$primary-blue, 24px);
+            margin: 20px;
+            padding: 20px;
+        }
+    }
+
+    .gradient-boxes-container {
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+
+        @each $font-size in var.$font-sizes {
+            .fs-#{$font-size} {
+                font-size: $font-size;
+            }
+        }  
+        
+        & * {
+            width: func.px-to-rem(45px);
+            height: func.px-to-rem(45px);
+            overflow: hidden;
+            border: 1px solid var.$primary-red;
+
+            @for $i from 1 through 20 {
+                @if $i != 10 {
+                &:nth-of-type(#{$i}) {
+                    background-color: darken(#ffffff, (5% * $i));
+                    color: lighten(#000000, (5% * $i));
+                    font-weight: normal;
+                    }
+                }
+                @else {
+                    background-color: var.$primary-blue;
+                    color: var.$primary-red;
+                    font-weight: 600;
+                }
+            }
+        } 
+    }
+}   
