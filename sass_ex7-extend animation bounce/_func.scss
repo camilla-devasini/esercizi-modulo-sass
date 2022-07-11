@@ -1,0 +1,14 @@
+@function random-hex() {
+    $rgb: "#";
+    @for $i from 1 through 6 {
+        $value: random(16) - 1;
+        @if ($value > 9) {
+            $letters: "ABCDEF";
+            $value: calc($value - 9);
+            $value: str-slice($letters, $value, $value);
+        }
+        $rgb: $rgb + $value;
+    }
+@return unquote($rgb);
+
+}

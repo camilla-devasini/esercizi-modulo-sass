@@ -1,0 +1,44 @@
+@use "func";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+@mixin bouncing-effect ($start:0px, $max-distance:-50px, $intermediate-distance, $end, $name) {
+    animation: {
+        name: $name;
+        duration: 1s;
+        iteration-count: infinite;
+        play-state: running;
+        timing-function: linear;
+    }
+    @keyframes #{$name} {
+    0%, 50% {transform: translateY($start);}
+    25% {transform: translateY($max-distance);}
+    75% {transform: translateY($intermediate-distance);}  
+    100% {transform: translateY($end);}  
+    } 
+}
+
+.bg-random {
+    background-color: func.random-hex(); 
+}
+
+.bounce {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: {
+        top: 100px;
+        left: 100px;
+        }
+    @include bouncing-effect(0px, -50px, -25px, 0px, bounce); 
+    @extend .bg-random; 
+    /*ho preferito assegnare alla classe .bg-random il background color casuale e poi estendere questa classe alla classe preesistente .bounce, in questo modo inserendo in html l'unica classe .bounce, il div ha tutte le proprietà */
+}
+
+
