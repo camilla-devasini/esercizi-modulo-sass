@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@function random-hex() {
+  $rgb: "#";
+  $i: 6;
+  @while $i > 0 {
+    $value: random(16) - 1;
+    @if ($value > 9) {
+      $letters: A, B, C, D, E, F;
+      $value: nth( $letters, ($value - 9));
+    }
+    $rgb: $rgb + $value;
+    $i: $i - 1;
+  }
+  @return unquote($rgb);
+}
+
+
+.col {
+  height: 100vh;
+  margin: 30px 10px;
+  @for $i from 1 through 12 {
+    &:nth-child(#{$i}) {
+      background-color: random-hex();
+    }
+  
+  }
+}
