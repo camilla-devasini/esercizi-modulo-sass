@@ -15,8 +15,7 @@
   color: rgb(36, 108, 72);
   text-decoration: underline;
   text-decoration-thickness: 1px;
-  -webkit-text-decoration-color: rgb(87, 87, 243);
-          text-decoration-color: rgb(87, 87, 243);
+  text-decoration-color: rgb(87, 87, 243);
   text-underline-offset: 10px;
 }
 .container .frames-container {
@@ -61,4 +60,6 @@
   padding: 15px 10px;
   margin: 20px;
   padding: 20px;
-}/*# sourceMappingURL=style.css.map */
+}
+
+/*# sourceMappingURL=style.css.map */

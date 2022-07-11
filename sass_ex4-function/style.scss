@@ -1,10 +1,10 @@
-@use "variables";
-@use "functions";
+@use "var";
+@use "func";
 
 @mixin article-box-style ($text-color, $border-color, $px-value) {
     color: $text-color;
     border: 1px solid $border-color;
-    font-size: rem-transform($px-value);
+    font-size: func.px-to-rem($px-value);
     width: 100%;
     height: 100%;
     display: flex;
@@ -24,14 +24,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid $primary-red;
+    border: 1px solid var.$primary-red;
 
     h1 {
         padding: 30px;
-        color: $primary-green;
+        color: var.$primary-green;
         text-decoration: underline {
             thickness: 1px ;
-            color: $primary-blue;
+            color: var.$primary-blue;
         }
         text-underline-offset: 10px;  
     }
@@ -49,9 +49,9 @@
         }
        
         .article-box {
-           @include  article-box-style ($primary-blue, $primary-green, 16px);
+           @include  article-box-style (var.$primary-blue, var.$primary-green, 16px);
            &:nth-of-type(2n) {
-            color: $primary-red;
+            color: var.$primary-red;
             }
         }
     }
@@ -61,7 +61,7 @@
         width: 100%;
     
         .article-footer {
-            @include article-box-style ($primary-green, $primary-blue, 24px);
+            @include article-box-style (var.$primary-green, var.$primary-blue, 24px);
             margin: 20px;
             padding: 20px;
         }
