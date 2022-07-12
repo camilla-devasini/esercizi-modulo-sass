@@ -95,8 +95,9 @@
             height: func.px-to-rem(45px);
             overflow: hidden;
             border: 1px solid var.$primary-red;
+            color:$text-color;
 
-            @for $i from 1 through 20 {
+            @for $i from 1 through 19 {
                 @if $i != 10 {
                 &:nth-of-type(#{$i}) {
                     background-color: darken(#ffffff, (5% * $i));
