@@ -83,6 +83,8 @@
         display: flex;
         justify-content: space-evenly;
         width: 100%;
+        margin-left: 20px;
+        margin-right: 20px;
 
         @each $font-size in var.$font-sizes {
             .fs-#{$font-size} {
@@ -95,8 +97,7 @@
             height: func.px-to-rem(45px);
             overflow: hidden;
             border: 1px solid var.$primary-red;
-            color:$text-color;
-
+        
             @for $i from 1 through 19 {
                 @if $i != 10 {
                 &:nth-of-type(#{$i}) {

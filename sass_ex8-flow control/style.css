@@ -73,8 +73,10 @@
 }
 .container .gradient-boxes-container {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 .container .gradient-boxes-container .fs-1rem {
   font-size: 1rem;
@@ -182,10 +184,5 @@
 .container .gradient-boxes-container *:nth-of-type(19) {
   background-color: #0d0d0d;
   color: #f2f2f2;
-  font-weight: normal;
-}
-.container .gradient-boxes-container *:nth-of-type(20) {
-  background-color: black;
-  color: white;
   font-weight: normal;
 }/*# sourceMappingURL=style.css.map */
